@@ -1,5 +1,4 @@
 
-
 public class Z
 {
     public static void main(String[] args)
@@ -19,4 +18,11 @@ public class Z
 	a = anInt;
     }
 
+    public static void fib(int n) {
+	if (n <= 1) return 1;
+	else 
+           return fib(n-1) + fib(n-2);
+   }
+
 } /* Z */
+
