@@ -20,8 +20,9 @@ public class Robot {
         r1 = new RobotSystem(1,aController);
         r2 = new RobotSystem(2,aController);
 
-        new Thread(r1).start();
         new Thread(r2).start();
+        new Thread(r1).start();
+
         new Thread(aController).start();
     }
 
