@@ -8,7 +8,7 @@
    For JavaME, we will have to convert the list/array/iterator to 
    a datastructure provided by that platform */
 
-package robot;
+//package first;
 
 import java.util.ArrayList;
 import java.util.Iterator;
@@ -40,13 +40,20 @@ public class RobotController implements Runnable {
     public synchronized void fireRobotEvent()
     {
 	RobotEvent anEvent = new RobotEvent(this,aGenerator.nextInt() % 6);
+        Iterator anIterator = listeners.iterator();
 
         System.out.println("Controller firing event "+anEvent);
+
+        while (anIterator.hasNext()) {
+	    ((RobotEventListener)anIterator.next()).eventReceived(anEvent);
+        }
 
     }
 
     public void run()
     {
+
+        System.out.println("RobotController starting\n");
 
         while (true) {
 
