@@ -9,12 +9,12 @@
 
 //package first;
 
-public class RobotSystemBQ implements Runnable,RobotEventListener
+public class RobotSystemMT implements Runnable,RobotEventListener
 {
     RobotController aController;
     int myNumber;
 
-    public RobotSystemBQ(int anInt, RobotController c)
+    public RobotSystemMT(int anInt, RobotController c)
     {
         myNumber = anInt;
 	aController = c;
@@ -32,6 +32,7 @@ public class RobotSystemBQ implements Runnable,RobotEventListener
 
     public void run()
     {
+
         System.out.println("RobotSystem "+myNumber+" starting");
 
         // register to receive events
@@ -39,7 +40,6 @@ public class RobotSystemBQ implements Runnable,RobotEventListener
 
         while (true) {
 
-	    // wait on an event and then remove from queue
 
 
         }
