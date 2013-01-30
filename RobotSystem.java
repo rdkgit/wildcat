@@ -19,7 +19,7 @@ public class RobotSystem implements Runnable,RobotEventListener
 
     public void eventReceived(RobotEvent e)
     {
-        System.out.println("RobotSystem "+myNumber+" received event "+e);
+        System.out.println("RobotSystem "+myNumber+" received event "+e+" on thread "+Thread.currentThread().getId());
     }
 
     public void run()
