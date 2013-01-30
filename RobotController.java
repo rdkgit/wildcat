@@ -53,12 +53,12 @@ public class RobotController implements Runnable {
     public void run()
     {
 
-        System.out.println("RobotController starting\n");
+        System.out.println("RobotController starting on thread "+Thread.currentThread().getId());
 
         while (true) {
 
 	  try {
-            Thread.sleep(500);
+            Thread.sleep(1500);
           } catch (InterruptedException e) { }
 
           //System.out.println("Robot controller doing its thing");

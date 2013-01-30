@@ -45,7 +45,7 @@ public class RobotSystemBQ implements Runnable,RobotEventListener
     {
         RobotEvent anEvent;
 
-        System.out.println("RobotSystemBQ "+myNumber+" starting");
+        System.out.println("RobotSystemBQ "+myNumber+" starting on thread "+Thread.currentThread().getId());
 
         // register to receive events
         aController.addEventListener(this);
