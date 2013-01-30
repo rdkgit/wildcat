@@ -2,7 +2,7 @@
   RobotSystem.java 
 */
 
-/* robot subsystem */
+/* robot subsystem processes events via the event thread */
 
 //package first;
 
