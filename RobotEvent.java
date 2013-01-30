@@ -20,6 +20,8 @@ public class RobotEvent {
     {
 	eventSource = source;
 
+        //System.out.println("RobotEvent: begining type "+eType);
+
         if ((eType < EVENT_TYPE_A) && (eType > EVENT_TYPE_E))
 	    eventType = EVENT_TYPE_UNKNOWN;
         else

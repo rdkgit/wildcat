@@ -39,7 +39,7 @@ public class RobotController implements Runnable {
 
     public synchronized void fireRobotEvent()
     {
-	RobotEvent anEvent = new RobotEvent(this,aGenerator.nextInt() % 6);
+	RobotEvent anEvent = new RobotEvent(this,1+(aGenerator.nextInt(5)));
         Iterator anIterator = listeners.iterator();
 
         System.out.println("Controller firing event "+anEvent);
@@ -58,7 +58,7 @@ public class RobotController implements Runnable {
         while (true) {
 
 	  try {
-            Thread.sleep(50);
+            Thread.sleep(500);
           } catch (InterruptedException e) { }
 
           //System.out.println("Robot controller doing its thing");

@@ -8,7 +8,7 @@
 
 //package first;
 
-import java.util.concurrent.BlockingQueue;
+//import java.util.concurrent.BlockingQueue;
 import java.util.concurrent.ArrayBlockingQueue;
 
 public class RobotSystemBQ implements Runnable,RobotEventListener
@@ -23,7 +23,8 @@ public class RobotSystemBQ implements Runnable,RobotEventListener
 	aController = c;
 
         // allocate blocking queue and initialize
-        bQ = new ArrayBlockingQueue(20);
+        //bQ = new ArrayBlockingQueue(20);
+        bQ = new BlockingQueue(20);
 
     }
 
