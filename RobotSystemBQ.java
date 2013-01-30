@@ -11,16 +11,14 @@
 //import java.util.concurrent.BlockingQueue;
 import java.util.concurrent.ArrayBlockingQueue;
 
-public class RobotSystemBQ implements Runnable,RobotEventListener
+public class RobotSystemBQ extends RobotSystem 
+                           implements Runnable,RobotEventListener 
 {
-    RobotController aController;
-    int myNumber;
     BlockingQueue bQ;
 
     public RobotSystemBQ(int anInt, RobotController c)
     {
-        myNumber = anInt;
-	aController = c;
+        super(anInt,c);
 
         // allocate blocking queue and initialize
         //bQ = new ArrayBlockingQueue(20);
@@ -58,7 +56,11 @@ public class RobotSystemBQ implements Runnable,RobotEventListener
             }
             catch (InterruptedException iE) { continue; }
 
-            System.out.println("RobotSystemMQ "+myNumber+" retreived event "+anEvent+" off of the blocking queue, Q size is now "+bQ.size());
+            System.out.println("RobotSystemMQ "+myNumber+
+                               " retreived event "+anEvent+
+                               " on thread "+Thread.currentThread().getId()+
+                               " off of the blocking queue, Q size is now "+
+                               bQ.size());
 
             try { Thread.sleep(500); } catch (InterruptedException iE) { }
         }

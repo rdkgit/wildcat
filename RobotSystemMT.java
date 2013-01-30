@@ -9,17 +9,12 @@
 
 //package first;
 
-public class RobotSystemMT implements Runnable,RobotEventListener
+public class RobotSystemMT extends RobotSystem
+                           implements Runnable,RobotEventListener
 {
-    RobotController aController;
-    int myNumber;
-
     public RobotSystemMT(int anInt, RobotController c)
     {
-        myNumber = anInt;
-	aController = c;
-
-
+	super(anInt,c);
     }
 
     public void eventReceived(RobotEvent e)
@@ -41,8 +36,7 @@ public class RobotSystemMT implements Runnable,RobotEventListener
 
     public void run()
     {
-
-        System.out.println("RobotSystem "+myNumber+" starting thread "+
+        System.out.println("RobotSystemMT "+myNumber+" starting thread "+
 			   Thread.currentThread().getId());
 
         // register to receive events
